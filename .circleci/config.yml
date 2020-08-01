@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quintin/7.2-fpm
+      - image: mccabe082/thinkcell-ci:v1
     steps:
       - checkout
       - run: dir -a
@@ -11,3 +11,4 @@ jobs:
       - run: whereis cmake
       - run: cmake --help
 
+      - run: cmake -G "Ninja" -D CMAKE_C_COMPILER=gcc-7.2
