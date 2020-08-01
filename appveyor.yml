@@ -6,7 +6,7 @@ environment:
   - ARCH: x64
 
 build_script:
-- cmake -G "Visual Studio 14 2015" -C Release .
+- cmake -G "Visual Studio 14 2015" --config Release .
 - cmake --build .
 
 test_script:
