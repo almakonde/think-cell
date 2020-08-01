@@ -16,3 +16,5 @@ PRIVATE
   $<TARGET_OBJECTS:helloworld>
   ::Catch2
 )
+
+add_test("helloworld_test" helloworld_test.exe)
