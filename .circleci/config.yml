@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: dir -a
-      - whereis gcc
-      - whereis cmake
-      - cmake --help
+      - run: whereis gcc
+      - run: whereis cmake
+      - run: cmake --help
 
