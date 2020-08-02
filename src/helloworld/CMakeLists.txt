@@ -12,8 +12,3 @@ PRIVATE
   sayHello.cpp
   sayHello.h
 )
-
-target_compile_features(helloworld
-PUBLIC
-    cxx_std_17
-)

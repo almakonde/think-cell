@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
-enable_language(CXX)
 project(think-cell)
+
+### C++ ############################
+enable_language(CXX)
+set(CMAKE_CXX_STANDARD 17 CACHE STRING "C++ standard required for build")
+set(CMAKE_CXX_STANDARD_REQUIRED ON CACHE BOOL "is C++ stndard a requirement")
+SET(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "enable/disable compiler specific extensions")
 
 ### External Libraries ##############
 set(FindModuleDir ${PROJECT_SOURCE_DIR}/CMake CACHE STRING "path to directory containing the Find<Module>.cmake modules")
