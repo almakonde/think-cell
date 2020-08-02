@@ -9,6 +9,6 @@ PRIVATE
 
 target_sources(helloworld
 PRIVATE
-  ${CMAKE_CURRENT_SOURCE_DIR}/sayHello.cpp
-  ${CMAKE_CURRENT_SOURCE_DIR}/sayHello.h
+  sayHello.cpp
+  sayHello.h
 )
