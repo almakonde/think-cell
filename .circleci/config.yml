@@ -6,7 +6,7 @@ jobs:
       - image: mccabe082/thinkcell-ci:v1
     steps:
       - checkout
-      - run: cmake . -G "Ninja" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/gcc --config Release
+      - run: cmake . -G "Ninja" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/gcc
       - run: cmake --build . --config Release
       - run: ctest --build-config Release -VV
         
