@@ -12,4 +12,9 @@ PRIVATE
   ::Catch2
 )
 
-add_test("helloworld_test" helloworld_test.exe)
+add_test(
+NAME
+  "helloworld_test"
+COMMAND
+  helloworld_test
+)

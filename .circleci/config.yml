@@ -3,10 +3,17 @@ version: 2
 jobs:
   build:
     docker:
-      - image: mccabe082/thinkcell-ci:v1
+      - image: mccabe082/thinkcell-ci:v2
     steps:
       - checkout
-      - run: cmake . -G "Ninja" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/gcc
+      - run: cmake . -G "Ninja" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++
       - run: cmake --build . --config Release
       - run: ctest --build-config Release -VV
-        
+
+#  # equivalent commands for local container testing...
+#  git clone https://github.com/mccabe082/think-cell.git
+#  cd think-cell/
+#  git checkout circleci-project-setup
+#  cmake . -G "Ninja" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/g++
+#  cmake --build . --config Release
+#  ctest --build-config Release -VV
