@@ -1,14 +1,12 @@
 version: 2
 
 jobs:
-  build:
+  build_and_test:
     docker:
       - image: mccabe082/thinkcell-ci:v1
     steps:
       - checkout
-      - run: dir -a
-      - run: whereis gcc
-      - run: whereis cmake
-      - run: cmake --help
-
-      - run: cmake -G "Ninja" -D CMAKE_C_COMPILER=gcc-7.2
+      - run: cmake . -G "Ninja" -DCMAKE_C_COMPILER=/usr/local/bin/gcc -DCMAKE_CXX_COMPILER=/usr/local/bin/gcc --config Release
+      - run: cmake --build . --config Release
+      - run: ctest --build-config Release -VV
+        
