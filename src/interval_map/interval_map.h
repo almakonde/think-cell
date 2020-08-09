@@ -18,8 +18,8 @@ public:
 		// Get elements within the assigned interval
 		
 		//NEED TO CONSTIDER EXTENDING ASSIGNMENT RANGE TO INCLUDE RANGES WITH THE SAME VALUE AND THE ONE BEING ASIGNED
-		Map::iterator itStart = std::find_if(m_map.begin(), m_map.end(), [&](const Pair& p) {return keyBegin < p.first; });
-		Map::iterator itEnd = std::find_if(m_map.begin(), m_map.end(), [&](const Pair& p) {return keyEnd < p.first; });
+		auto itStart = std::find_if(m_map.begin(), m_map.end(), [&](const Pair& p) {return keyBegin < p.first; });
+		auto itEnd = std::find_if(m_map.begin(), m_map.end(), [&](const Pair& p) {return keyEnd < p.first; });
 
 
 		// introducing some higher level concepts:
