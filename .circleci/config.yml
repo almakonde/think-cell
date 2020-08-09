@@ -1,7 +1,7 @@
 version: 2
 
 jobs:
-  build:
+  gcc-7.2.0-build:
     docker:
       - image: mccabe082/thinkcell-ci:v1
     steps:
