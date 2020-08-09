@@ -38,14 +38,14 @@ TEST_CASE("Interval Map Basic Functionality", "[interval_map]") {
 
 		try
 		{
-			REQUIRE(m[0] == 'C');
-			REQUIRE(m[1] == 'C');
-			REQUIRE(m[2] == 'D');
-			REQUIRE(m[3] == 'D');
-			REQUIRE(m[4] == 'E');
-			REQUIRE(m[5] == 'E');
+			REQUIRE(m[0] == Value('C'));
+			REQUIRE(m[1] == Value('C'));
+			REQUIRE(m[2] == Value('D'));
+			REQUIRE(m[3] == Value('D'));
+			REQUIRE(m[4] == Value('E'));
+			REQUIRE(m[5] == Value('E'));
 
-			REQUIRE(m[7] == 'E');
+			REQUIRE(m[7] == Value('E'));
 		}
 		catch (...)
 		{
@@ -57,7 +57,7 @@ TEST_CASE("Interval Map Basic Functionality", "[interval_map]") {
 
 		try
 		{
-			REQUIRE(m[-1] == 'B');
+			REQUIRE(m[-1] == Value('B'));
 		}
 		catch (...)
 		{
@@ -74,7 +74,7 @@ TEST_CASE("Interval Map Basic Functionality", "[interval_map]") {
             // add values which are less than the initialisation value
 			// these should be ignored and not added to the map
 			// (Note: this is infered from the question)
-			m.assign(-2, -1, 'A');
+			m.assign(Key<int>(-2), Key<int>(-1), Value('A'));
 
 			REQUIRE(m.internalMapSize() == startSize);
 		}
@@ -83,6 +83,6 @@ TEST_CASE("Interval Map Basic Functionality", "[interval_map]") {
 			REQUIRE(false);
 		}
 	}
-
-	*/	
+	*/
+	
 }

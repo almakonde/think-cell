@@ -7,7 +7,7 @@ public:
 	Value(V val) : _val(val) {}
     
     // copyable
-	Value(V& k) : _val(v._val) {}
+	Value(V& v) : _val(v._val) {}
     
     // assignable
 	void operator=(const Value<V>& v) { _val = v._val; }
