@@ -1,5 +1,11 @@
 #pragma once
 #include <map>
+
+namespace
+{
+
+}
+
 template<typename K, typename V>
 class interval_map {
 	V m_valBegin;
@@ -20,5 +26,10 @@ public:
 		} else {
 			return (--it)->second;
 		}
+	}
+
+	size_t internalMapSize()
+	{
+		return m_map.size();
 	}
 };
