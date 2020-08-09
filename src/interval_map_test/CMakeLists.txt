@@ -5,6 +5,7 @@ PRIVATE
   main.cpp
   interval_map.test.cpp
   key.test.cpp
+  value.test.cpp
 )
 
 target_link_libraries(interval_map_test

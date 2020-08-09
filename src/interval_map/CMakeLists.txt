@@ -9,4 +9,5 @@ target_sources(interval_map
 INTERFACE
   interval_map.h
   key.h
+  value.h
 )
