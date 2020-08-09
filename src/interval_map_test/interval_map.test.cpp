@@ -2,20 +2,22 @@
 #include "catch.hpp"
 #include "interval_map/interval_map.h"
 #include "interval_map/key.h"
+#include "interval_map/value.h"
+#include "interval_map/key.h"
 
 
 TEST_CASE("Empty Interval Map", "[interval_map]") {
 
-	char valBegin = 'A';
+	Value<char> valBegin = 'A';
 
-	interval_map<int, char> emptyMap(valBegin);
+	interval_map<Key<int>, Value<char>> emptyMap(valBegin);
 
 	SECTION("querying and empty interval map returns the initialisation value") {
 
 		try
 		{
-			char V = emptyMap[71675];
-			REQUIRE(V=='A');
+			Value<char> V = emptyMap[Key<int>(71675)];
+			REQUIRE(V==Value('A'));
 		}
 		catch (...)
 		{
@@ -26,10 +28,10 @@ TEST_CASE("Empty Interval Map", "[interval_map]") {
 
 TEST_CASE("Interval Map Basic Functionality", "[interval_map]") {
 
-	interval_map<int, char> m('B');
-	m.assign(0, 2, 'C');
-	m.assign(2, 4, 'D');
-	m.assign(4, 6, 'E');
+	interval_map<Key<int>, Value<char>> m(Value<char>('B'));
+	m.assign(Key<int>(0), Key<int>(2), Value('C'));
+	m.assign(Key<int>(2), Key<int>(4), Value('D'));
+	m.assign(Key<int>(4), Key<int>(6), Value('E'));
 
 	/*
 	SECTION("Each key-value-pair (k,v) in interval_map<K,V>::m_map means that the value v is associated with all keys from k (including) to the next key (excluding) in m_map") {
