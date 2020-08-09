@@ -1,6 +1,6 @@
 
 #include "catch.hpp"
-#include "interval_map/Value.h"
+#include "interval_map/value.h"
 
 TEST_CASE("check value constraints", "[Value]") {
 
