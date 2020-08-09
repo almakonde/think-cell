@@ -14,9 +14,9 @@ PRIVATE
   ::Catch2
 )
 
-add_test(
-NAME
-  "interval_map_test"
-COMMAND
-  interval_map_test
-)
+#add_test(
+#NAME
+#  "interval_map_test"
+#COMMAND
+#  interval_map_test
+#)
