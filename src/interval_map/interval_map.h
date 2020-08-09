@@ -3,8 +3,9 @@
 
 namespace
 {
-
+	bool insertRequired;
 }
+
 
 template<typename K, typename V>
 class interval_map {
@@ -16,7 +17,11 @@ public:
 	{}
 
 	void assign( K const& keyBegin, K const& keyEnd, V const& val ) {
+		
 
+
+		// previous key must be less than
+		m_map.emplace(std::make_pair(keyBegin, val));
 	}
 
 	V const& operator[]( K const& key ) const {
